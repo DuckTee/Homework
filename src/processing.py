@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def filter_by_state(data_dictionary, state='EXECUTED'):
     '''Фильтрует список словарей по ключу 'state' и возвращает новый список'''
 
@@ -8,6 +9,7 @@ def filter_by_state(data_dictionary, state='EXECUTED'):
         if dictionary.get('state') == state:
             filtered_dictionary.append(dictionary)
     return filtered_dictionary
+
 
 if __name__ == "__main__":
     input_dictionary = [
@@ -30,6 +32,7 @@ def sort_by_date(data, reverse=True):
     '''Функция возвращает новый список, отсортированный по дате'''
 
     return sorted(data, key=lambda x: datetime.fromisoformat(x['date']), reverse=reverse)
+
 
 data = [
     {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
